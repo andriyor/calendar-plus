@@ -58,9 +58,7 @@
         {...metadata.dataAttributes || {}}
       >
         <span class="day-number">{date.format("D")}</span>
-        {#if metadata.emoji}
-          <div class="day-emoji">{metadata.emoji}</div>
-        {/if}
+        <div class="day-emoji">{metadata.emoji ?? ""}</div>
         <div class="dot-container">
           {#each metadata.dots ?? [] as dot}
             <Dot {...dot} />
@@ -212,6 +210,7 @@
   /* Same stacking treatment as .day-number / .dot-container so the emoji sits
      above the feature-image and active overlays. */
   .day-emoji {
+    font-size: 1.4em;
     line-height: 1.2;
     position: relative;
     z-index: 1;
