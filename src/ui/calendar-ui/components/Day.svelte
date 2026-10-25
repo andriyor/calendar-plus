@@ -58,6 +58,9 @@
         {...metadata.dataAttributes || {}}
       >
         <span class="day-number">{date.format("D")}</span>
+        {#if metadata.emoji}
+          <div class="day-emoji">{metadata.emoji}</div>
+        {/if}
         <div class="dot-container">
           {#each metadata.dots ?? [] as dot}
             <Dot {...dot} />
@@ -202,6 +205,14 @@
      existing .day / .today / .day.active.today rules and inherit through the
      span, so the number looks identical whether or not the cell has an image. */
   .day-number {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Same stacking treatment as .day-number / .dot-container so the emoji sits
+     above the feature-image and active overlays. */
+  .day-emoji {
+    line-height: 1.2;
     position: relative;
     z-index: 1;
   }

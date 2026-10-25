@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **Mood emoji (opt-in).** Show the first emoji of a daily note frontmatter property (default `mood`) under the date, e.g. `mood: 🙂 good` shows 🙂. Settings → Mood emoji. Reads only the metadata cache, no note-content reads.
+
 ## 2.1.13
 
 Internal robustness and performance. No new settings; `minAppVersion` unchanged at 1.8.7.
